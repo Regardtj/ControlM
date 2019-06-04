@@ -1,0 +1,116 @@
+{
+  "Fin_Transaction": {
+    "Type": "SimpleFolder",
+    "ControlmServer": "workbench",
+    "OrderMethod": "Manual",
+    "Fin_Job1": {
+      "Type": "Job:Command",
+      "SubApplication": "Test",
+      "Host": "workbench",
+      "Description": "Testing of Transaction run",
+      "RunAs": "ctmag",
+      "Application": "Fin",
+      "Command": "ls -la",
+      "When": {
+        "WeekDays": [
+          "NONE"
+        ],
+        "MonthDays": [
+          "NONE"
+        ],
+        "SpecificDates": [],
+        "DaysRelation": "OR"
+      },
+      "eventsToWaitFor": {
+        "Type": "WaitForEvents",
+        "Events": [
+          {
+            "Event": "Fin_Job1-TO-Fin_Job2"
+          }
+        ]
+      },
+      "eventsToAdd": {
+        "Type": "AddEvents",
+        "Events": [
+          {
+            "Event": "Fin_Job2-TO-Fin_Job3"
+          }
+        ]
+      },
+      "eventsToDelete": {
+
+        "Type": "DeleteEvents",
+        "Events": [
+          {
+            "Event": "Fin_Job1-TO-Fin_Job2"
+          }
+        ]
+      }
+    },
+    "Fin_Job3": {
+      "Type": "Job:Command",
+      "SubApplication": "Test",
+      "Host": "workbench",
+      "RunAs": "ctmag",
+      "Application": "Fin",
+      "Command": "ls -la",
+      "When": {
+        "WeekDays": [
+          "NONE"
+        ],
+        "MonthDays": [
+          "NONE"
+        ],
+        "SpecificDates": [],
+        "DaysRelation": "OR"
+      },
+      "eventsToWaitFor": {
+        "Type": "WaitForEvents",
+        "Events": [
+          {
+            "Event": "Fin_Job2-TO-Fin_Job3"
+          }
+        ]
+      },
+      "eventsToDelete": {
+        "Type": "DeleteEvents",
+        "Events": [
+          {
+            "Event": "Fin_Job2-TO-Fin_Job3"
+          }
+        ]
+      }
+    },
+    "FIN_Transaction_Run": {
+      "Type": "Job:Command",
+      "SubApplication": "Test",
+      "Host": "workbench",
+      "Description": "Template",
+      "RunAs": "ctmag",
+      "Application": "Fin",
+      "Command": "ls",
+      "When": {
+        "WeekDays": [
+          "NONE"
+        ],
+        "MonthDays": [
+          "NONE"
+        ],
+        "SpecificDates": [],
+        "DaysRelation": "OR"
+      },
+      "snowflake": {
+        "Type": "Resource:Mutex",
+        "MutexType": "Exclusive"
+      },
+      "eventsToAdd": {
+        "Type": "AddEvents",
+        "Events": [
+          {
+            "Event": "Fin_Job1-TO-Fin_Job2"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -2,9 +2,9 @@
 import os
 import sys
 
-ctmserver = "ctmaws"
-runID = "0ae9bc73-4ccb-4e6b-9654-9cad4d6b097b"
-jobID = "0028k"
+ctmserver = "workbench"
+runID = "1b9343ca-ba2d-4c02-b3fc-b07212d9a35d"
+jobID = "*"
 #curjobs = "hou-workflow-hadoop.json" #hou-workflow-hadoop.json  #hou-workflow-hadoop_db.json
 
 #set aapi environment - Run this if you have multiple aapi environments and you need to set to a specific env
@@ -21,18 +21,18 @@ def trackstatus ():
 #trackstatus()
 
 # Return job logs from specific jobID
-def getjoblogs ():
+#def getjoblogs ():
     os.system(('ctm run job:log::get ctmaws:%s')%(jobID)) #001vj
 
 #getjoblogs()
 
 # Return job output from specific jobID
-def getjobout ():
+#def getjobout ():
     os.system(('ctm run job:output::get ctmaws:%s')%(jobID)) 
 
 #getjobout()
 
-def getjobjson ():
+#def getjobjson ():
     os.system(('ctm deploy jobs::get -s "ctm=ctmaws&folder=MultiFlow"'))
 
 #getjobjson()
@@ -40,14 +40,14 @@ def getjobjson ():
     
 
 #    Get all the hostgroups of the specified Control-M Server.
-def gethg ():
+#def gethg ():
     hostgrps=os.system(('ctm config server:hostgroups::get %s')%(ctmserver))
     print(hostgrps)
 #gethg() #Unhash this function call to run the function
 
 #    Get status of jobs that match the requested search criteria. Search fields are jobname, ctm, folder, host, application, subApplication, status and description
 #      run jobs:status::get [limit] -s <search query>
-def getstatus ():
+#def getstatus ():
     #os.system (('ctm run jobs:status:: -s ctm=%s')%(ctmserver))
     os.system (('ctm run jobs:status::get -s "jobname=NCU_Command_test_job&application=NCU_ncc*&status=Ended OK,Ended Not OK,Executing"'))
 
@@ -56,13 +56,13 @@ def getstatus ():
 #  Get all the agents of the specified Control-M Server.
 #getag = os.system('ctm config server:agents::get hou-presrv9')
 
-def getagents ():
+#def getagents ():
     getag = os.system(('ctm config server:agents::get %s')%(ctmserver))
 
 #getagents() #Unhash this function call to run the function
 
 #    Get all events records for specific search. Search fields are ctm=*, name=*, date=*
-def getevents ():
+#def getevents ():
     os.system('ctm run events::get -s ctm=hou-presrv9')
 
 #getevents() #Unhash this function call to run the function
@@ -111,10 +111,10 @@ def getevents ():
 #    set job&#39;s end status to OK, post processing action
       #run job::setToOk <jobId>
 
-def jobset ():
+#def jobset ():
     os.system(('ctm run job::setToOk ctmaws:%s')%(jobID))
 
-jobset()
+#jobset()
 
 #    Get the job status.
 #      run job:status::get <jobId>
