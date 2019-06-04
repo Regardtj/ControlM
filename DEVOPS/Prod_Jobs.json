@@ -1,0 +1,190 @@
+{
+  "Prod_AAPI" : {
+    "Type" : "SimpleFolder",
+    "ControlmServer" : "Demo",
+    "OrderMethod" : "Manual",
+    "P_AAPI_1" : {
+      "Type" : "Job:Command",
+      "RunAs" : "ctmsrv",
+      "Application": "Live",
+      "SubApplication": "Production",
+      "Command" : "sleep 15",
+      "When" : {
+        "WeekDays" : [ "ALL" ],
+        "MonthDays" : [ "NONE" ],
+        "DaysRelation" : "OR"
+      },
+      "IfBase:Output_0" : {
+        "Type" : "If:Output",
+        "Code" : "NOTOK",
+        "DoNotify_0" : {
+          "Type" : "Action:Notify",
+          "Urgency" : "VeryUrgent",
+          "Message" : "%%JOBNAME ended NOTOK, Please investigate"
+        }
+      },
+      "eventsToAdd" : {
+        "Type" : "AddEvents",
+        "Events" : [ {
+          "Event" : "P_AAPI_1-TO-P_AAPI_2"
+        } ]
+      }
+    },
+    "P_AAPI_2" : {
+      "Type" : "Job:Command",
+      "RunAs" : "ctmsrv",
+      "Application": "Live",
+      "SubApplication": "Production",      
+      "Command" : "sleep 20",
+      "When" : {
+        "WeekDays" : [ "ALL" ],
+        "MonthDays" : [ "NONE" ],
+        "DaysRelation" : "OR"
+      },
+      "IfBase:Output_0" : {
+        "Type" : "If:Output",
+        "Code" : "NOTOK",
+        "DoNotify_0" : {
+          "Type" : "Action:Notify",
+          "Urgency" : "VeryUrgent",
+          "Message" : "%%JOBNAME ended NOTOK, Please investigate"
+        }
+      },
+      "eventsToWaitFor" : {
+        "Type" : "WaitForEvents",
+        "Events" : [ {
+          "Event" : "P_AAPI_1-TO-P_AAPI_2"
+        } ]
+      },
+      "eventsToAdd" : {
+        "Type" : "AddEvents",
+        "Events" : [ {
+          "Event" : "P_AAPI_2-TO-P_AAPI_3"
+        }, {
+          "Event" : "P_AAPI_2-TO-P_AAPI_4"
+        } ]
+      },
+      "eventsToDelete" : {
+        "Type" : "DeleteEvents",
+        "Events" : [ {
+          "Event" : "P_AAPI_1-TO-P_AAPI_2"
+        } ]
+      }
+    },
+    "P_AAPI_3" : {
+      "Type" : "Job:Command",
+      "RunAs" : "ctmsrv",
+      "Application": "Live",
+      "SubApplication": "Production",      
+      "Command" : "sleep 25",
+      "When" : {
+        "WeekDays" : [ "ALL" ],
+        "MonthDays" : [ "NONE" ],
+        "DaysRelation" : "OR"
+      },
+      "IfBase:Output_0" : {
+        "Type" : "If:Output",
+        "Code" : "NOTOK",
+        "DoNotify_0" : {
+          "Type" : "Action:Notify",
+          "Urgency" : "VeryUrgent",
+          "Message" : "%%JOBNAME ended NOTOK, Please investigate"
+        }
+      },
+      "eventsToWaitFor" : {
+        "Type" : "WaitForEvents",
+        "Events" : [ {
+          "Event" : "P_AAPI_2-TO-P_AAPI_3"
+        } ]
+      },
+      "eventsToAdd" : {
+        "Type" : "AddEvents",
+        "Events" : [ {
+          "Event" : "P_AAPI_3-TO-P_AAPI_5"
+        } ]
+      },
+      "eventsToDelete" : {
+        "Type" : "DeleteEvents",
+        "Events" : [ {
+          "Event" : "P_AAPI_2-TO-P_AAPI_3"
+        } ]
+      }
+    },
+    "P_AAPI_4" : {
+      "Type" : "Job:Command",
+      "RunAs" : "ctmsrv",
+      "Application": "Live",
+      "SubApplication": "Production",      
+      "Command" : "sleep 10",
+      "When" : {
+        "WeekDays" : [ "ALL" ],
+        "MonthDays" : [ "NONE" ],
+        "DaysRelation" : "OR"
+      },
+      "IfBase:Output_0" : {
+        "Type" : "If:Output",
+        "Code" : "NOTOK",
+        "DoNotify_0" : {
+          "Type" : "Action:Notify",
+          "Urgency" : "VeryUrgent",
+          "Message" : "%%JOBNAME ended NOTOK, Please investigate"
+        }
+      },
+      "eventsToWaitFor" : {
+        "Type" : "WaitForEvents",
+        "Events" : [ {
+          "Event" : "P_AAPI_2-TO-P_AAPI_4"
+        } ]
+      },
+      "eventsToAdd" : {
+        "Type" : "AddEvents",
+        "Events" : [ {
+          "Event" : "P_AAPI_4-TO-P_AAPI_5"
+        } ]
+      },
+      "eventsToDelete" : {
+        "Type" : "DeleteEvents",
+        "Events" : [ {
+          "Event" : "P_AAPI_2-TO-P_AAPI_4"
+        } ]
+      }
+    },
+    "P_AAPI_5" : {
+      "Type" : "Job:Command",
+      "RunAs" : "ctmsrv",
+      "Application": "Live",
+      "SubApplication": "Production",      
+      "Command" : "sleep 5",
+      "When" : {
+        "WeekDays" : [ "ALL" ],
+        "MonthDays" : [ "NONE" ],
+        "DaysRelation" : "OR"
+      },
+      "IfBase:Output_0" : {
+        "Type" : "If:Output",
+        "Code" : "NOTOK",
+        "DoNotify_0" : {
+          "Type" : "Action:Notify",
+          "Urgency" : "VeryUrgent",
+          "Message" : "%%JOBNAME ended NOTOK, Please investigate"
+        }
+      },
+      "eventsToWaitFor" : {
+        "Type" : "WaitForEvents",
+        "Events" : [ {
+          "Event" : "P_AAPI_4-TO-P_AAPI_5"
+        }, {
+          "Event" : "P_AAPI_3-TO-P_AAPI_5"
+        } ]
+      },
+      "eventsToDelete" : {
+        "Type" : "DeleteEvents",
+        "Events" : [ {
+          "Event" : "P_AAPI_4-TO-P_AAPI_5"
+        }, {
+          "Event" : "P_AAPI_3-TO-P_AAPI_5"
+        } ]
+      }
+    }
+  }
+}
