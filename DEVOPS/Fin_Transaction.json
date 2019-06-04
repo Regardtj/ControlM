@@ -1,13 +1,13 @@
 {
   "Fin_Transaction": {
     "Type": "SimpleFolder",
-    "ControlmServer": "workbench",
+    "ControlmServer": "Demo",
     "OrderMethod": "Manual",
     "Fin_Job1": {
       "Type": "Job:Command",
       "SubApplication": "Test",
-      "Host": "workbench",
-      "Description": "Testing of Transaction run",
+      "Host": "Demo",
+      "Description": "Testing of Transaction run - 1st test run",
       "RunAs": "ctmag",
       "Application": "Fin",
       "Command": "ls -la",
@@ -50,7 +50,7 @@
     "Fin_Job3": {
       "Type": "Job:Command",
       "SubApplication": "Test",
-      "Host": "workbench",
+      "Host": "Demo",
       "RunAs": "ctmag",
       "Application": "Fin",
       "Command": "ls -la",
@@ -84,7 +84,7 @@
     "FIN_Transaction_Run": {
       "Type": "Job:Command",
       "SubApplication": "Test",
-      "Host": "workbench",
+      "Host": "Demo",
       "Description": "Template",
       "RunAs": "ctmag",
       "Application": "Fin",

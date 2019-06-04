@@ -1,0 +1,22 @@
+{
+  "DeployDescriptor":
+  [
+    {
+      "Property" :"ControlmServer",
+      "Assign" : "ProdControlM"
+    },
+    {
+      "Property" :"Application",
+      "Replace" : [ {"T(.*)" : "P$1"} ]
+    },
+    {
+      "Property" :"SubApplication",
+      "Replace" : [ {"T(.*)" : "P$1"} ]
+    },
+    {
+      "ApplyOn"     :  {"Type":"Folder"},
+      "Property" : "@",
+      "Replace" : [ {"T(.*)" : "P$1"} ]
+    }
+  ]
+}
