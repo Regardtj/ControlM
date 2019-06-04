@@ -5,7 +5,7 @@
     "OrderMethod" : "Manual",
     "W_AAPI_1" : {
       "Type" : "Job:Command",
-      "RunAs" : "ctmsrv",
+      "RunAs" : "workbench",
       "Application": "Preprod",
       "SubApplication": "Workbench",
 	  "Description": "Testing of Transaction run on Workbench",
@@ -33,7 +33,7 @@
     },
     "W_AAPI_2" : {
       "Type" : "Job:Command",
-      "RunAs" : "ctmsrv",
+      "RunAs" : "workbench",
       "Application": "Preprod",
       "SubApplication": "Workbench",
 	  "Description": "Testing of Transaction run on Workbench",      
@@ -75,7 +75,7 @@
     },
     "W_AAPI_3" : {
       "Type" : "Job:Command",
-      "RunAs" : "ctmsrv",
+      "RunAs" : "workbench",
       "Application": "Preprod",
       "SubApplication": "Workbench",
 	  "Description": "Testing of Transaction run on Workbench",
@@ -115,7 +115,7 @@
     },
     "W_AAPI_4" : {
       "Type" : "Job:Command",
-      "RunAs" : "ctmsrv",
+      "RunAs" : "workbench",
       "Application": "Preprod",
       "SubApplication": "Workbench",
 	  "Description": "Testing of Transaction run on Workbench",
@@ -155,7 +155,7 @@
     },
     "W_AAPI_5" : {
       "Type" : "Job:Command",
-      "RunAs" : "ctmsrv",
+      "RunAs" : "workbench",
       "Application": "Preprod",
       "SubApplication": "Workbench",
 	  "Description": "Testing of Transaction run on Workbench",
