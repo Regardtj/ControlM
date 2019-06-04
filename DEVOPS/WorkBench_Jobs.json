@@ -1,0 +1,195 @@
+{
+  "Workbench_AAPI" : {
+    "Type" : "SimpleFolder",
+    "ControlmServer" : "workbench",
+    "OrderMethod" : "Manual",
+    "W_AAPI_1" : {
+      "Type" : "Job:Command",
+      "RunAs" : "ctmag",
+      "Application": "Preprod",
+      "SubApplication": "Workbench",
+	  "Description": "Testing of Transaction run on Workbench",
+      "Command" : "sleep 15",
+      "When" : {
+        "WeekDays" : [ "ALL" ],
+        "MonthDays" : [ "NONE" ],
+        "DaysRelation" : "OR"
+      },
+      "IfBase:Output_0" : {
+        "Type" : "If:Output",
+        "Code" : "NOTOK",
+        "DoNotify_0" : {
+          "Type" : "Action:Notify",
+          "Urgency" : "VeryUrgent",
+          "Message" : "%%JOBNAME ended NOTOK, Please investigate"
+        }
+      },
+      "eventsToAdd" : {
+        "Type" : "AddEvents",
+        "Events" : [ {
+          "Event" : "W_AAPI_1-TO-W_AAPI_2"
+        } ]
+      }
+    },
+    "W_AAPI_2" : {
+      "Type" : "Job:Command",
+      "RunAs" : "ctmag",
+      "Application": "Preprod",
+      "SubApplication": "Workbench",
+	  "Description": "Testing of Transaction run on Workbench",      
+      "Command" : "sleep 20",
+      "When" : {
+        "WeekDays" : [ "ALL" ],
+        "MonthDays" : [ "NONE" ],
+        "DaysRelation" : "OR"
+      },
+      "IfBase:Output_0" : {
+        "Type" : "If:Output",
+        "Code" : "NOTOK",
+        "DoNotify_0" : {
+          "Type" : "Action:Notify",
+          "Urgency" : "VeryUrgent",
+          "Message" : "%%JOBNAME ended NOTOK, Please investigate"
+        }
+      },
+      "eventsToWaitFor" : {
+        "Type" : "WaitForEvents",
+        "Events" : [ {
+          "Event" : "W_AAPI_1-TO-W_AAPI_2"
+        } ]
+      },
+      "eventsToAdd" : {
+        "Type" : "AddEvents",
+        "Events" : [ {
+          "Event" : "W_AAPI_2-TO-W_AAPI_3"
+        }, {
+          "Event" : "W_AAPI_2-TO-W_AAPI_4"
+        } ]
+      },
+      "eventsToDelete" : {
+        "Type" : "DeleteEvents",
+        "Events" : [ {
+          "Event" : "T_AAPI_1-TO-T_AAPI_2"
+        } ]
+      }
+    },
+    "W_AAPI_3" : {
+      "Type" : "Job:Command",
+      "RunAs" : "ctmag",
+      "Application": "Preprod",
+      "SubApplication": "Workbench",
+	  "Description": "Testing of Transaction run on Workbench",
+      "Command" : "sleep 25",
+      "When" : {
+        "WeekDays" : [ "ALL" ],
+        "MonthDays" : [ "NONE" ],
+        "DaysRelation" : "OR"
+      },
+      "IfBase:Output_0" : {
+        "Type" : "If:Output",
+        "Code" : "NOTOK",
+        "DoNotify_0" : {
+          "Type" : "Action:Notify",
+          "Urgency" : "VeryUrgent",
+          "Message" : "%%JOBNAME ended NOTOK, Please investigate"
+        }
+      },
+      "eventsToWaitFor" : {
+        "Type" : "WaitForEvents",
+        "Events" : [ {
+          "Event" : "W_AAPI_2-TO-W_AAPI_3"
+        } ]
+      },
+      "eventsToAdd" : {
+        "Type" : "AddEvents",
+        "Events" : [ {
+          "Event" : "W_AAPI_3-TO-W_AAPI_5"
+        } ]
+      },
+      "eventsToDelete" : {
+        "Type" : "DeleteEvents",
+        "Events" : [ {
+          "Event" : "W_AAPI_2-TO-W_AAPI_3"
+        } ]
+      }
+    },
+    "W_AAPI_4" : {
+      "Type" : "Job:Command",
+      "RunAs" : "ctmag",
+      "Application": "Preprod",
+      "SubApplication": "Workbench",
+	  "Description": "Testing of Transaction run on Workbench",
+      "Command" : "sleep 10",
+      "When" : {
+        "WeekDays" : [ "ALL" ],
+        "MonthDays" : [ "NONE" ],
+        "DaysRelation" : "OR"
+      },
+      "IfBase:Output_0" : {
+        "Type" : "If:Output",
+        "Code" : "NOTOK",
+        "DoNotify_0" : {
+          "Type" : "Action:Notify",
+          "Urgency" : "VeryUrgent",
+          "Message" : "%%JOBNAME ended NOTOK, Please investigate"
+        }
+      },
+      "eventsToWaitFor" : {
+        "Type" : "WaitForEvents",
+        "Events" : [ {
+          "Event" : "W_AAPI_2-TO-W_AAPI_4"
+        } ]
+      },
+      "eventsToAdd" : {
+        "Type" : "AddEvents",
+        "Events" : [ {
+          "Event" : "W_AAPI_4-TO-W_AAPI_5"
+        } ]
+      },
+      "eventsToDelete" : {
+        "Type" : "DeleteEvents",
+        "Events" : [ {
+          "Event" : "W_AAPI_2-TO-W_AAPI_4"
+        } ]
+      }
+    },
+    "W_AAPI_5" : {
+      "Type" : "Job:Command",
+      "RunAs" : "ctmag",
+      "Application": "Preprod",
+      "SubApplication": "Workbench",
+	  "Description": "Testing of Transaction run on Workbench",
+      "Command" : "sleep 5",
+      "When" : {
+        "WeekDays" : [ "ALL" ],
+        "MonthDays" : [ "NONE" ],
+        "DaysRelation" : "OR"
+      },
+      "IfBase:Output_0" : {
+        "Type" : "If:Output",
+        "Code" : "NOTOK",
+        "DoNotify_0" : {
+          "Type" : "Action:Notify",
+          "Urgency" : "VeryUrgent",
+          "Message" : "%%JOBNAME ended NOTOK, Please investigate"
+        }
+      },
+      "eventsToWaitFor" : {
+        "Type" : "WaitForEvents",
+        "Events" : [ {
+          "Event" : "W_AAPI_4-TO-W_AAPI_5"
+        }, {
+          "Event" : "W_AAPI_3-TO-W_AAPI_5"
+        } ]
+      },
+      "eventsToDelete" : {
+        "Type" : "DeleteEvents",
+        "Events" : [ {
+          "Event" : "W_AAPI_4-TO-W_AAPI_5"
+        }, {
+          "Event" : "W_AAPI_3-TO-W_AAPI_5"
+        } ]
+      }
+    }
+  }
+}
