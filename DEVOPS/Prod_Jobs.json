@@ -8,6 +8,7 @@
       "RunAs" : "ctmsrv",
       "Application": "Live",
       "SubApplication": "Production",
+      "Description": "Testing of Transaction run on Production",
       "Command" : "sleep 15",
       "When" : {
         "WeekDays" : [ "ALL" ],
@@ -34,7 +35,8 @@
       "Type" : "Job:Command",
       "RunAs" : "ctmsrv",
       "Application": "Live",
-      "SubApplication": "Production",      
+      "SubApplication": "Production",
+      "Description": "Testing of Transaction run on Production",      
       "Command" : "sleep 20",
       "When" : {
         "WeekDays" : [ "ALL" ],
@@ -75,7 +77,8 @@
       "Type" : "Job:Command",
       "RunAs" : "ctmsrv",
       "Application": "Live",
-      "SubApplication": "Production",      
+      "SubApplication": "Production",
+      "Description": "Testing of Transaction run on Production",     
       "Command" : "sleep 25",
       "When" : {
         "WeekDays" : [ "ALL" ],
@@ -114,7 +117,8 @@
       "Type" : "Job:Command",
       "RunAs" : "ctmsrv",
       "Application": "Live",
-      "SubApplication": "Production",      
+      "SubApplication": "Production",
+      "Description": "Testing of Transaction run on Production",      
       "Command" : "sleep 10",
       "When" : {
         "WeekDays" : [ "ALL" ],
@@ -153,7 +157,8 @@
       "Type" : "Job:Command",
       "RunAs" : "ctmsrv",
       "Application": "Live",
-      "SubApplication": "Production",      
+      "SubApplication": "Production",
+      "Description": "Testing of Transaction run on Production",     
       "Command" : "sleep 5",
       "When" : {
         "WeekDays" : [ "ALL" ],
