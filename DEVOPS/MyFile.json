@@ -5,8 +5,7 @@
         "Application": "aws",
 
         "SubApplication": "awsworkb",
-        "SiteStandard": "jobs-as-code-standard",
-        "ControlmServer" : "ctmaws"
+        "ControlmServer" : "workbench"
         },
       
         "reggie" : {
@@ -15,8 +14,8 @@
      "ncu-wb-job2" : {
       "Type" : "Job:Command",
       "Description" : "ncu-wb-job2 Demo to Regardt - Testing job",
-      "Host" : "ncuctm",
-      "RunAs" : "ctms",
+      "Host" : "workbench",
+      "RunAs" : "ctmag",
       "Command" : "sleep 10",
       "sem1": {
         "Type": "Resource:Semaphore",
@@ -26,8 +25,8 @@
       "ncu-wb-job1" : {
       "Type" : "Job:Command",
       "Description" : "ncu-wb-job1 Built in eclipse deployed by Jenkins",
-      "Host" : "ncuctm",
-      "RunAs" : "ctms",
+      "Host" : "workbench",
+      "RunAs" : "ctmag",
       "Command" : "sleep 10",
       "sem1": {
         "Type": "Resource:Semaphore",
