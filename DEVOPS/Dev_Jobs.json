@@ -6,7 +6,7 @@
     "T_AAPI_1" : {
       "Type" : "Job:Command",
       "RunAs" : "ctmsrv",
-      "Command" : "ls",
+      "Command" : "sleep 15",
       "When" : {
         "WeekDays" : [ "ALL" ],
         "MonthDays" : [ "NONE" ],
@@ -31,7 +31,7 @@
     "T_AAPI_2" : {
       "Type" : "Job:Command",
       "RunAs" : "ctmsrv",
-      "Command" : "ls",
+      "Command" : "sleep 20",
       "When" : {
         "WeekDays" : [ "ALL" ],
         "MonthDays" : [ "NONE" ],
@@ -70,7 +70,7 @@
     "T_AAPI_3" : {
       "Type" : "Job:Command",
       "RunAs" : "ctmsrv",
-      "Command" : "ls",
+      "Command" : "sleep 25",
       "When" : {
         "WeekDays" : [ "ALL" ],
         "MonthDays" : [ "NONE" ],
@@ -107,7 +107,7 @@
     "T_AAPI_4" : {
       "Type" : "Job:Command",
       "RunAs" : "ctmsrv",
-      "Command" : "ls",
+      "Command" : "sleep 10",
       "When" : {
         "WeekDays" : [ "ALL" ],
         "MonthDays" : [ "NONE" ],
@@ -144,7 +144,7 @@
     "T_AAPI_5" : {
       "Type" : "Job:Command",
       "RunAs" : "ctmsrv",
-      "Command" : "ls",
+      "Command" : "sleep 5",
       "When" : {
         "WeekDays" : [ "ALL" ],
         "MonthDays" : [ "NONE" ],
