@@ -6,9 +6,9 @@
     "Fin_Job1": {
       "Type": "Job:Command",
       "SubApplication": "Test",
-      "Host": "Demo",
+      "Host": "v9.0.18",
       "Description": "Testing of Transaction run - 1st test run",
-      "RunAs": "ctmag",
+      "RunAs": "ctmsrv",
       "Application": "Fin",
       "Command": "ls -la",
       "When": {
@@ -50,8 +50,8 @@
     "Fin_Job3": {
       "Type": "Job:Command",
       "SubApplication": "Test",
-      "Host": "Demo",
-      "RunAs": "ctmag",
+      "Host": "v9.0.18",
+      "RunAs": "ctmsrv",
       "Application": "Fin",
       "Command": "ls -la",
       "When": {
@@ -84,9 +84,9 @@
     "FIN_Transaction_Run": {
       "Type": "Job:Command",
       "SubApplication": "Test",
-      "Host": "Demo",
+      "Host": "v9.0.18",
       "Description": "Template",
-      "RunAs": "ctmag",
+      "RunAs": "ctmsrv",
       "Application": "Fin",
       "Command": "ls",
       "When": {
