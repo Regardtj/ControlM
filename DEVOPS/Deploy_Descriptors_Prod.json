@@ -3,11 +3,11 @@
   [
     {
       "Property" :"ControlmServer",
-      "Assign" : "Demo"
+      "Assign" : "ProdControlM"
     },
     {
-      "Property" :"RunAs",
-      "Replace" : [ {"ctmag" : "ctmsrv"} ]
+      "Property" :"Application",
+      "Replace" : [ {"T(.*)" : "P$1"} ]
     },
     {
       "Property" :"SubApplication",
@@ -15,7 +15,7 @@
     },
     {
       "ApplyOn"     :  {"Type":"Folder"},
-      "Property" : "AAPI_Export",
+      "Property" : "@",
       "Replace" : [ {"T(.*)" : "P$1"} ]
     }
   ]
